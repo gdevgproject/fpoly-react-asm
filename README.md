@@ -53,7 +53,7 @@ yarn add tailwindcss @tailwindcss/vite react-router-dom @reduxjs/toolkit react-r
 Run the following command to install the necessary packages:
 
 ```bash
-yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plugin-tailwindcss
+yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plugin-tailwindcss @types/node
 ```
 
 ### Package Descriptions
@@ -173,6 +173,19 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plug
     "paths": {
       "@/*": ["src/*"]
     }
+   ```
+
+## Step 7: Configure Alias for Vite in `vite.config.ts`
+
+1. Open the `vite.config.ts` file in the root directory.
+2. Add the following scripts below the `"plugins"` section:
+
+   ```json
+   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+   }
    ```
 
 ---
