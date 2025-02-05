@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<string | null>(null)
@@ -17,36 +18,36 @@ export default function Header() {
 
   const menuItems = [
     {
-      title: 'Beleuchtung',
-      items: ['LED Grow Lights', 'HPS Lampen', 'Komplettsets', 'Zeitschaltuhren', 'Reflektoren', 'Leuchtmittel']
+      title: 'Lighting',
+      items: ['LED Grow Lights', 'HPS Lamps', 'Complete Sets', 'Timers', 'Reflectors', 'Bulbs']
     },
     {
-      title: 'Growbox',
-      items: ['Growboxen', 'Growbox Komplettsets', 'Growbox Zubehör', 'Growzelte', 'Growschränke']
+      title: 'Grow Equipment',
+      items: ['Grow Tents', 'Complete Kits', 'Accessories', 'Grow Cabinets', 'Setup Tools']
     },
     {
-      title: 'Dünger',
-      items: ['Basis Dünger', 'Spezial Dünger', 'Bio Dünger', 'Booster', 'pH Regulierung']
+      title: 'Nutrients',
+      items: ['Base Nutrients', 'Special Nutrients', 'Organic Nutrients', 'Boosters', 'pH Control']
     },
     {
-      title: 'Erde & Substrate',
-      items: ['Erde', 'Kokos', 'Hydro Substrate', 'Perlite', 'Vermiculite']
+      title: 'Growing Media',
+      items: ['Soil', 'Coco', 'Hydro Substrates', 'Perlite', 'Vermiculite']
     },
     {
-      title: 'Töpfe & Behälter',
-      items: ['Eckige Töpfe', 'Runde Töpfe', 'Untersetzer', 'Pflanzschalen', 'Anzuchttöpfe']
+      title: 'Pots & Containers',
+      items: ['Square Pots', 'Round Pots', 'Saucers', 'Trays', 'Seedling Pots']
     },
     {
-      title: 'Bewässerung',
-      items: ['Bewässerungssysteme', 'Pumpen', 'Schläuche', 'Timer', 'Tanks']
+      title: 'Irrigation',
+      items: ['Watering Systems', 'Pumps', 'Tubes', 'Timers', 'Tanks']
     },
     {
-      title: 'Pflanzen & Gärtnern',
-      items: ['Samen', 'Stecklinge', 'Werkzeuge', 'Messgeräte', 'Pflanzenpflege']
+      title: 'Plants & Gardening',
+      items: ['Seeds', 'Cuttings', 'Tools', 'Meters', 'Plant Care']
     },
     {
-      title: 'Lüftung & Klimaanlage',
-      items: ['Ventilatoren', 'Filter', 'Klimageräte', 'Luftbefeuchter', 'Abluft Sets']
+      title: 'Ventilation & Climate',
+      items: ['Fans', 'Filters', 'Air Conditioning', 'Humidifiers', 'Exhaust Sets']
     }
   ]
 
@@ -55,12 +56,21 @@ export default function Header() {
       {/* Top Bar */}
       <div className='container mx-auto max-w-7xl px-4 py-4'>
         <div className='flex items-center justify-between gap-4'>
+          {/* Logo */}
+          <Link to='/' className='flex items-center'>
+            <img
+              src='https://e7.pngegg.com/pngimages/361/627/png-clipart-leaf-logo-green-leaves-green-and-teal-leaf-logo-text-maple-leaf-thumbnail.png'
+              alt='Logo'
+              className='h-10 w-auto'
+            />
+          </Link>
+
           {/* Search Bar */}
           <div className='mx-auto max-w-2xl flex-1'>
             <div className='group relative'>
               <input
                 type='search'
-                placeholder='Suchen Sie nach Produkten, Marken und mehr'
+                placeholder='Search for products, brands and more'
                 className='w-full rounded-md border-2 border-transparent bg-white py-2 pr-10 pl-4 text-gray-900 transition-all duration-300 ease-in-out placeholder:text-gray-500 focus:border-[#517B3C] focus:ring-2 focus:ring-[#517B3C]/20 focus:outline-none'
               />
               <button className='absolute top-0 right-0 bottom-0 px-3 text-gray-500 transition-colors duration-200 hover:text-[#517B3C]'>

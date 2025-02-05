@@ -3,11 +3,11 @@ export default function Newsletter() {
     <section className='container mx-auto max-w-7xl px-4 py-16'>
       <div className='mx-auto max-w-2xl text-center'>
         <h2 className='text-3xl font-semibold text-[#4A5842]'>
-          Etwas abonnieren<span className='text-2xl'>*</span>
+          Subscribe<span className='text-2xl'>*</span>
         </h2>
-        <h3 className='mb-6 text-3xl font-semibold text-[#4A5842]'>— Unser Newsletter</h3>
+        <h3 className='mb-6 text-3xl font-semibold text-[#4A5842]'>— Our Newsletter</h3>
         <p className='mb-8 text-gray-600'>
-          Get weekly update about our product on your email, no spam guaranteed we promise{' '}
+          Get weekly updates about our products in your email, no spam guaranteed we promise{' '}
           <span role='img' aria-label='promise'>
             ✌️
           </span>
@@ -22,7 +22,7 @@ export default function Newsletter() {
             type='submit'
             className='rounded-md bg-[#4A5842] px-6 py-2 text-white transition-colors hover:bg-[#3A4632]'
           >
-            ABONNIEREN
+            SUBSCRIBE
           </button>
         </form>
       </div>
