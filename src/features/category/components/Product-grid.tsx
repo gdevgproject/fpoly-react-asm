@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 
 export default function ProductGrid() {
   const [sortBy, setSortBy] = useState('newest')
@@ -89,7 +90,7 @@ export default function ProductGrid() {
 
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
         {products.map((product) => (
-          <div key={product.id} className='group relative'>
+          <Link to='/product' key={product.id} className='group relative'>
             {product.sale && (
               <span className='absolute top-4 left-4 rounded bg-[#4A5842] px-2 py-1 text-xs text-white'>Sell</span>
             )}
@@ -145,7 +146,7 @@ export default function ProductGrid() {
                 </button>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

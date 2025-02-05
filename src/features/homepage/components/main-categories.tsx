@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 export default function MainCategories() {
   const categories = [
     {
@@ -63,7 +65,7 @@ export default function MainCategories() {
       <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Kategorien</h2>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         {categories.map((category) => (
-          <div key={category.id} className='group relative overflow-hidden rounded-lg'>
+          <Link to='/category' key={category.id} className='group relative overflow-hidden rounded-lg'>
             <div className='aspect-square'>
               <img
                 src={category.image || '/placeholder.svg'}
@@ -77,7 +79,7 @@ export default function MainCategories() {
                 <p className='text-sm opacity-90'>{category.items}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
