@@ -5,21 +5,24 @@ export default function BestSellers() {
       name: 'Growbox',
       subtitle: 'Dress',
       price: '$ 963.85',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D?height=400&width=400'
     },
     {
       id: 2,
       name: 'Töpfe',
       subtitle: '5 By 5 Pots For Planting',
       price: '$ 6130.00',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D?height=400&width=400'
     },
     {
       id: 3,
       name: 'Lichthänger-Set',
       subtitle: 'Light-Hanger Set',
       price: '$ 753.00',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D?height=400&width=400'
     },
     {
       id: 4,
@@ -28,7 +31,8 @@ export default function BestSellers() {
       price: '$ 2364.00',
       salePrice: '$ 1155.00',
       sale: true,
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D?height=400&width=400'
     }
   ]
 

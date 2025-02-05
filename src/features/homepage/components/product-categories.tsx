@@ -3,50 +3,46 @@ export default function ProductCategories() {
     {
       id: 1,
       name: 'garten spaten',
-      image: '/placeholder.svg?height=600&width=800',
-      large: true
+      image:
+        'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=800&width=600'
     },
     {
       id: 2,
       name: 'sand',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 3,
       name: 'pflanzer',
-      image: '/placeholder.svg?height=400&width=400'
-    },
-    {
-      id: 4,
-      name: 'schlammkuchen',
-      image: '/placeholder.svg?height=400&width=400'
-    },
-    {
-      id: 5,
-      name: 'klemmen',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     }
   ]
 
   return (
     <section className='container mx-auto max-w-7xl px-4 py-12'>
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        {categories.map((category) => (
+      <div className='grid auto-rows-[300px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
+        {categories.map((category, index) => (
           <div
             key={category.id}
-            className={`group relative overflow-hidden rounded-lg ${
-              category.large ? 'md:col-span-2 md:row-span-2' : ''
+            className={`relative overflow-hidden rounded-lg ${
+              index === 0 ? 'md:col-span-1 md:row-span-2 lg:col-span-2 lg:row-span-2' : ''
             }`}
           >
-            <div className='aspect-square md:aspect-auto md:h-full'>
+            <div className='absolute inset-0'>
               <img
                 src={category.image || '/placeholder.svg'}
                 alt={category.name}
-                className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
+                className='h-full w-full object-cover'
               />
-            </div>
-            <div className='absolute inset-0 bg-black/20'>
-              <h3 className='absolute bottom-4 left-4 text-xl font-medium text-white'>{category.name}</h3>
+              <div className='absolute inset-0 bg-gradient-to-b from-black/10 to-black/30'>
+                <div className='absolute right-0 bottom-0 left-0'>
+                  <div className='bg-black/20 p-4 backdrop-blur-[2px]'>
+                    <h3 className='text-xl font-medium text-white'>{category.name}</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         ))}

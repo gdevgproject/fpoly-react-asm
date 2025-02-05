@@ -4,49 +4,57 @@ export default function MainCategories() {
       id: 1,
       name: 'Beleuchtung',
       items: '30 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 2,
       name: 'Dünger',
       items: '20 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 3,
       name: 'Erde & Substrate',
       items: '20 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 4,
       name: 'Bewässerung',
       items: '20 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 5,
       name: 'Töpfe & Behälter',
       items: '20 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 6,
       name: 'Growbox',
       items: '20 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 7,
       name: 'Pflanzen & Gärtnern',
       items: '30 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 8,
       name: 'Lüftung & Klimaanlage',
       items: '20 items',
-      image: '/placeholder.svg?height=400&width=400'
+      image:
+        'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     }
   ]
 
