@@ -167,7 +167,7 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plug
 1. Open the `tsconfig.app.json` file in the root directory.
 2. Add the following scripts inside the `"compilerOptions"` section:
 
-   ```json
+   ```ts
    "compilerOptions": {
     "baseUrl": ".",
     "paths": {
