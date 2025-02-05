@@ -167,7 +167,7 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plug
 1. Open the `tsconfig.app.json` file in the root directory.
 2. Add the following scripts inside the `"compilerOptions"` section:
 
-   ```ts
+   ```json
    "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -180,7 +180,7 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plug
 1. Open the `vite.config.ts` file in the root directory.
 2. Add the following scripts below the `"plugins"` section:
 
-   ```json
+   ```ts
    resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
