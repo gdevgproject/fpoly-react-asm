@@ -181,6 +181,7 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plug
 2. Add the following scripts below the `"plugins"` section:
 
    ```ts
+   import path from 'path';
    resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
