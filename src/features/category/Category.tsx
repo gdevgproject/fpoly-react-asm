@@ -1,6 +1,6 @@
 import CategoryHero from '@/features/category/components/Category-hero'
 import CategoryTabs from '@/features/category/components/Category-tabs'
-import ProductGrid from '@/features/category/components/product-grid'
+import ProductGrid from '@/features/category/components/Product-grid'
 import Sidebar from '@/features/category/components/Sidebar'
 
 import Newsletter from '@/ui/newsletter'

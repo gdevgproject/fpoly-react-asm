@@ -1,6 +1,6 @@
-import BestSellers from '@/features/homepage/components/best-sellers'
-import MainCategories from '@/features/homepage/components/main-categories'
-import ProductCategories from '@/features/homepage/components/product-categories'
+import BestSellers from '@/features/homepage/components/Best-sellers'
+import MainCategories from '@/features/homepage/components/Main-categories'
+import ProductCategories from '@/features/homepage/components/Product-categories'
 import Newsletter from '@/ui/newsletter'
 
 export default function HomePage() {

@@ -7,7 +7,6 @@ export default function ProductReviews() {
       content:
         "I've been using this cleanser for about five or six months now and my acne is almost completely gone. I really struggled for years with my skin and tried everything possible but this is the only thing that managed to clear up my skin. 100% recommend and will continue to use is for sure."
     }
-    // Add more reviews as needed
   ]
 
   return (
