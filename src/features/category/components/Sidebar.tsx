@@ -1,5 +1,5 @@
 export default function Sidebar() {
-  const categories = ['Eckige Töpfe', 'Runde Töpfe', 'Untersetzer', 'Pflanzschalen']
+  const categories = ['Square Pots', 'Round Pots', 'Coasters', 'Plant Bowls']
 
   return (
     <div className='space-y-8'>

@@ -4,56 +4,56 @@ export default function MainCategories() {
   const categories = [
     {
       id: 1,
-      name: 'Beleuchtung',
+      name: 'Lighting',
       items: '30 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 2,
-      name: 'Dünger',
+      name: 'Fertilizers',
       items: '20 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 3,
-      name: 'Erde & Substrate',
+      name: 'Soil & Substrates',
       items: '20 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 4,
-      name: 'Bewässerung',
+      name: 'Irrigation',
       items: '20 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 5,
-      name: 'Töpfe & Behälter',
+      name: 'Pots & Containers',
       items: '20 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 6,
-      name: 'Growbox',
+      name: 'Grow Box',
       items: '20 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 7,
-      name: 'Pflanzen & Gärtnern',
+      name: 'Plants & Gardening',
       items: '30 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 8,
-      name: 'Lüftung & Klimaanlage',
+      name: 'Ventilation & Air Conditioning',
       items: '20 items',
       image:
         'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
@@ -62,7 +62,7 @@ export default function MainCategories() {
 
   return (
     <section className='container mx-auto max-w-7xl px-4 py-12'>
-      <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Kategorien</h2>
+      <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Categories</h2>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         {categories.map((category) => (
           <Link to='/category' key={category.id} className='group relative overflow-hidden rounded-lg'>

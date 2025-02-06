@@ -7,7 +7,7 @@ export default function Hero() {
 
   const slides = [
     {
-      title: 'Wir kümmern uns um Ihre schöner Garten und Haus',
+      title: 'We take care of your beautiful garden and house',
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
       image:
@@ -27,7 +27,7 @@ export default function Hero() {
             </h1>
             <p className='mt-6 text-lg text-gray-700'>{slides[currentSlide].description}</p>
             <button className='mt-8 rounded-md border-2 border-[#517B3C] bg-transparent px-8 py-3 text-[#517B3C] transition-all hover:bg-[#517B3C] hover:text-white focus:ring-2 focus:ring-[#517B3C] focus:ring-offset-2 focus:outline-none'>
-              Lern mehr
+              Learn More
             </button>
 
             {/* Decorative Elements */}

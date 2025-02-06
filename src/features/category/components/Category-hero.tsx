@@ -10,10 +10,10 @@ export default function CategoryHero() {
               </a>
             </li>
             <li className='text-gray-500'>/</li>
-            <li className='text-gray-700'>Töpfe & Behälter</li>
+            <li className='text-gray-700'>Pots & Containers</li>
           </ol>
         </nav>
-        <h1 className='text-4xl font-semibold text-[#4A5842]'>Töpfe & Behälter</h1>
+        <h1 className='text-4xl font-semibold text-[#4A5842]'>Pots & Containers</h1>
       </div>
     </section>
   )

@@ -2,19 +2,19 @@ export default function ProductCategories() {
   const categories = [
     {
       id: 1,
-      name: 'garten spaten',
+      name: 'Garden Spade',
       image:
         'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=800&width=600'
     },
     {
       id: 2,
-      name: 'sand',
+      name: 'Sand',
       image:
         'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     },
     {
       id: 3,
-      name: 'pflanzer',
+      name: 'Planter',
       image:
         'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=400&width=400'
     }
