@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 export default function ProductCategories() {
   const categories = [
     {
@@ -24,8 +26,9 @@ export default function ProductCategories() {
     <section className='container mx-auto max-w-7xl px-4 py-12'>
       <div className='grid auto-rows-[300px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
         {categories.map((category, index) => (
-          <div
+          <Link
             key={category.id}
+            to={`/category`}
             className={`relative overflow-hidden rounded-lg ${
               index === 0 ? 'md:col-span-1 md:row-span-2 lg:col-span-2 lg:row-span-2' : ''
             }`}
@@ -44,7 +47,7 @@ export default function ProductCategories() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

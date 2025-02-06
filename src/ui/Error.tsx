@@ -3,10 +3,14 @@ import { useNavigate } from 'react-router'
 function Error() {
   const navigate = useNavigate()
   return (
-    <div>
-      <h1>Something went wrong 😢</h1>
-      {/* <p>{error.data || error.message}</p> */}
-      <button onClick={() => navigate(-1)}>&larr; Go back</button>
+    <div className='flex min-h-screen flex-col items-center justify-center bg-gray-100 p-6'>
+      <h1 className='mb-4 text-4xl font-bold text-red-500'>Something went wrong 😢</h1>
+      <button
+        onClick={() => navigate(-1)}
+        className='rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600'
+      >
+        &larr; Go back
+      </button>
     </div>
   )
 }
