@@ -29,7 +29,7 @@ export default function ProductCategories() {
           <Link
             key={category.id}
             to={`/category`}
-            className={`relative overflow-hidden rounded-lg ${
+            className={`group relative overflow-hidden rounded-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg ${
               index === 0 ? 'md:col-span-1 md:row-span-2 lg:col-span-2 lg:row-span-2' : ''
             }`}
           >
@@ -37,12 +37,15 @@ export default function ProductCategories() {
               <img
                 src={category.image || '/placeholder.svg'}
                 alt={category.name}
-                className='h-full w-full object-cover'
+                className='h-full w-full scale-100 object-cover transition-all duration-300 group-hover:scale-110'
               />
-              <div className='absolute inset-0 bg-gradient-to-b from-black/10 to-black/30'>
-                <div className='absolute right-0 bottom-0 left-0'>
-                  <div className='bg-black/20 p-4 backdrop-blur-[2px]'>
+              <div className='absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 transition-opacity duration-300 group-hover:opacity-90'>
+                <div className='absolute right-0 bottom-0 left-0 translate-y-0 transition-transform duration-300 group-hover:-translate-y-2'>
+                  <div className='bg-black/40 p-4 backdrop-blur-sm transition-all duration-300 group-hover:bg-black/50'>
                     <h3 className='text-xl font-medium text-white'>{category.name}</h3>
+                    <p className='mt-1 text-sm text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                      Click to explore →
+                    </p>
                   </div>
                 </div>
               </div>
