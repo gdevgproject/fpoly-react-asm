@@ -21,7 +21,7 @@ export default function Newsletter() {
         >
           <input
             type='email'
-            placeholder='youremail123@gmail.com'
+            placeholder='youremail@gmail.com'
             className='flex-1 rounded-md border border-gray-300 px-4 py-2 focus:border-[#517B3C] focus:ring-1 focus:ring-[#517B3C] focus:outline-none'
           />
           <button

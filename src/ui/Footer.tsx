@@ -43,92 +43,92 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2 - Um */}
+          {/* Column 2 - About */}
           <nav className='space-y-4'>
-            <h2 className='mb-6 text-lg font-medium'>Um</h2>
+            <h2 className='mb-6 text-lg font-medium'>About</h2>
             <ul className='space-y-4 text-sm'>
               <li>
                 <a href='#' className='hover:underline'>
-                  Kontaktiere Uns
+                  Contact Us
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Über Uns
+                  About Us
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Karriere
+                  Careers
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Unternehmensinformationen
+                  Company Information
                 </a>
               </li>
             </ul>
           </nav>
 
-          {/* Column 3 - Hilfe */}
+          {/* Column 3 - Help */}
           <nav className='space-y-4'>
-            <h2 className='mb-6 text-lg font-medium'>Hilfe</h2>
+            <h2 className='mb-6 text-lg font-medium'>Help</h2>
             <ul className='space-y-4 text-sm'>
               <li>
                 <a href='#' className='hover:underline'>
-                  Unsere Produzenten
+                  Our Producers
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Zahlung
+                  Payment
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Versand
+                  Shipping
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Stornierung & Rückgabe
+                  Cancellation & Returns
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Verstoß Melden
+                  Report Violation
                 </a>
               </li>
             </ul>
           </nav>
 
-          {/* Column 4 - politik */}
+          {/* Column 4 - Policies */}
           <nav className='space-y-4'>
-            <h2 className='mb-6 text-lg font-medium'>politik</h2>
+            <h2 className='mb-6 text-lg font-medium'>Policies</h2>
             <ul className='space-y-4 text-sm'>
               <li>
                 <a href='#' className='hover:underline'>
-                  Rücknahmegarantie
+                  Return Policy
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Nutzungsbedingungen
+                  Terms of Use
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Sicherheit
+                  Security
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Privatsphäre
+                  Privacy
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:underline'>
-                  Seitenverzeichnis
+                  Sitemap
                 </a>
               </li>
             </ul>
