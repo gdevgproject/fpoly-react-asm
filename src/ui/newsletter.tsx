@@ -12,7 +12,13 @@ export default function Newsletter() {
             ✌️
           </span>
         </p>
-        <form className='flex gap-2'>
+        <form
+          className='flex gap-2'
+          onSubmit={(e) => {
+            e.preventDefault()
+            console.log('Form submitted')
+          }}
+        >
           <input
             type='email'
             placeholder='youremail123@gmail.com'
