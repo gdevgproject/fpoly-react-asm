@@ -43,7 +43,7 @@ cd <project-name>
 Next, install the necessary dependencies for Tailwind CSS and React Router:
 
 ```bash
-yarn add tailwindcss @tailwindcss/vite react-router-dom @reduxjs/toolkit react-redux
+yarn add tailwindcss @tailwindcss/vite react-router @reduxjs/toolkit react-redux
 ```
 
 * **Tailwind CSS & Vite Config (`vite.config.js`):** [https://tailwindcss.com/docs/installation/using-vite](https://tailwindcss.com/docs/installation/using-vite)
