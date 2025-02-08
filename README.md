@@ -169,9 +169,10 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier prettier-plug
 
    ```json
    "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"]
+      }
     }
    ```
 
