@@ -23,7 +23,7 @@ export default function MainCategories() {
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         {categories.map((category) => (
           <Link
-            to='/category'
+            to={`/category/${category.id}`}
             key={category.id}
             className='group relative overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'
           >

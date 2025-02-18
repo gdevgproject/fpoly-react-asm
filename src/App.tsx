@@ -19,7 +19,7 @@ export default function App() {
           element: <Homepage />
         },
         {
-          path: '/category',
+          path: '/category/:id',
           element: <Category />
         },
         {
