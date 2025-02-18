@@ -25,7 +25,7 @@ export default function BestSellers() {
       <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Best Sellers</h2>
       <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
         {products.map((product) => (
-          <Link key={product.id} to={`/product`} className='group relative'>
+          <Link key={product.id} to={`/product/${product.id}`} className='group relative'>
             {product.sale && (
               <span className='absolute top-2 right-2 bg-[#1F2937] px-2 py-1 text-xs text-white'>SALE</span>
             )}

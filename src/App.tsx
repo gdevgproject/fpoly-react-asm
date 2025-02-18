@@ -23,7 +23,7 @@ export default function App() {
           element: <Category />
         },
         {
-          path: '/product',
+          path: '/product/:id',
           element: <Product />
         }
       ]

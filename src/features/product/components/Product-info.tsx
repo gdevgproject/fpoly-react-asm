@@ -1,13 +1,21 @@
 import { useState } from 'react'
 
-export default function ProductInfo() {
+interface ProductInfoProps {
+  product: {
+    id: number
+    name: string
+    price: number
+  }
+}
+
+export default function ProductInfo({ product }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(3)
 
   return (
     <div className='space-y-6'>
       <div>
         <p className='text-sm font-medium text-[#517B3C]'>PLANT</p>
-        <h1 className='mt-2 text-3xl font-bold text-gray-900'>Square cultivation pots</h1>
+        <h1 className='mt-2 text-3xl font-bold text-gray-900'>{product.name}</h1>
         <p className='mt-1 text-xl text-gray-900'>0.27 to 2 litres</p>
       </div>
 
@@ -18,7 +26,7 @@ export default function ProductInfo() {
 
       <div className='flex items-end gap-4'>
         <div>
-          <p className='text-3xl font-bold text-gray-900'>$125.00</p>
+          <p className='text-3xl font-bold text-gray-900'>${product.price}</p>
           <p className='text-sm text-gray-500 line-through'>$250.00</p>
         </div>
         <span className='rounded-md bg-red-50 px-2 py-1 text-sm font-medium text-red-600'>50%</span>

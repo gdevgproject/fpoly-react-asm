@@ -5,8 +5,8 @@ interface Product {
   id: number
   name: string
   subtitle: string
-  price: string
-  salePrice?: string
+  price: number
+  salePrice?: number
   sale?: boolean
   image: string
 }
@@ -25,7 +25,7 @@ export default function ProductList() {
       <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Featured Products</h2>
       <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
         {products.map((product) => (
-          <Link key={product.id} to={`/product`} className='group relative'>
+          <Link key={product.id} to={`/product/${product.id}`} className='group relative'>
             {product.sale && (
               <span className='absolute top-2 right-2 bg-[#1F2937] px-2 py-1 text-xs text-white'>SALE</span>
             )}
@@ -42,11 +42,11 @@ export default function ProductList() {
               <div className='flex gap-2'>
                 {product.salePrice ? (
                   <>
-                    <span className='text-gray-500 line-through'>{product.price}</span>
-                    <span className='text-red-500'>{product.salePrice}</span>
+                    <span className='text-gray-500 line-through'>${product.price}</span>
+                    <span className='text-red-500'>${product.salePrice}</span>
                   </>
                 ) : (
-                  <span>{product.price}</span>
+                  <span>${product.price}</span>
                 )}
               </div>
             </div>

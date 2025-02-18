@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router'
 
 interface Product {
   id: number
@@ -39,11 +40,11 @@ export default function ProductGrid({ category }: ProductGridProps) {
   return (
     <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
       {products.map((product) => (
-        <div key={product.id} className='rounded-md border p-4'>
+        <Link to={`/product/${product.id}`} key={product.id} className='rounded-md border p-4'>
           <img src={product.image} alt={product.name} className='mb-2 h-48 w-full rounded-md object-cover' />
           <h3 className='text-lg font-semibold'>{product.name}</h3>
           <p className='text-gray-600'>Price: ${product.price}</p>
-        </div>
+        </Link>
       ))}
     </div>
   )
