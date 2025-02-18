@@ -11,7 +11,7 @@ interface Product {
   image: string
 }
 
-export default function BestSellers() {
+export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function BestSellers() {
 
   return (
     <section className='container mx-auto max-w-7xl px-4 py-12'>
-      <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Best Sellers</h2>
+      <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Featured Products</h2>
       <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
         {products.map((product) => (
           <Link key={product.id} to={`/product`} className='group relative'>

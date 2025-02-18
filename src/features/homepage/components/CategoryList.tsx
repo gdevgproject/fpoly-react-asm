@@ -8,7 +8,7 @@ interface Category {
   items: string
 }
 
-export default function MainCategories() {
+export default function CategoryList() {
   const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function MainCategories() {
 
   return (
     <section className='container mx-auto max-w-7xl px-4 py-12'>
-      <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Categories</h2>
+      <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Explore Our Categories</h2>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         {categories.map((category) => (
           <Link
