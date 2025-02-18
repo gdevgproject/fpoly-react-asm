@@ -1,4 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
+import AdminCategories from './admin/AdminCategories'
+import AdminLayout from './admin/AdminLayout'
+import AdminProducts from './admin/AdminProducts'
 import Category from './features/category/Category'
 import Homepage from './features/homepage/Homepage'
 import Product from './features/product/Product'
@@ -22,6 +25,20 @@ export default function App() {
         {
           path: '/product',
           element: <Product />
+        }
+      ]
+    },
+    {
+      path: '/admin',
+      element: <AdminLayout />,
+      children: [
+        {
+          path: 'categories',
+          element: <AdminCategories />
+        },
+        {
+          path: 'products',
+          element: <AdminProducts />
         }
       ]
     }
