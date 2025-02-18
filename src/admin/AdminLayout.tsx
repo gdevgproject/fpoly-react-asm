@@ -1,6 +1,21 @@
-import { NavLink, Outlet } from 'react-router'
+import { useEffect } from 'react'
+import { NavLink, Outlet, useNavigate } from 'react-router'
 
 export default function AdminLayout() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const user = localStorage.getItem('user')
+    if (user) {
+      const parsedUser = JSON.parse(user)
+      if (parsedUser.role !== 'admin') {
+        navigate('/')
+      }
+    } else {
+      navigate('/auth/login')
+    }
+  }, [navigate])
+
   return (
     <div className='flex h-screen bg-gray-50'>
       {/* Sidebar */}
