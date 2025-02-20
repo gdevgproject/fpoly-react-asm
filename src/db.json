@@ -43,7 +43,9 @@
       "price": 2499.0,
       "categoryId": 1,
       "image": "https://www.bhphotovideo.com/images/images250x250/canon_1483c002_eos_5d_mark_iv_1272154.jpg",
-      "quantity": 10
+      "quantity": 10,
+      "description": "Professional DSLR camera with 30.4MP full-frame sensor",
+      "searchTerms": "canon eos 5d mark iv dslr camera professional photography full frame"
     },
     {
       "id": 2,
@@ -51,7 +53,9 @@
       "price": 1999.0,
       "categoryId": 2,
       "image": "https://www.bhphotovideo.com/images/images250x250/sony_ilce_7m3_b_alpha_a7iii_mirrorless_digital_1392544.jpg",
-      "quantity": 5
+      "quantity": 5,
+      "description": "Mirrorless camera with 24.2MP full-frame sensor",
+      "searchTerms": "sony alpha a7 iii mirrorless camera full frame"
     },
     {
       "id": 3,
@@ -59,7 +63,9 @@
       "price": 1299.0,
       "categoryId": 3,
       "image": "https://www.bhphotovideo.com/images/images250x250/sigma_579101_24_70mm_f_2_8_dg_1461438.jpg",
-      "quantity": 20
+      "quantity": 20,
+      "description": "Versatile zoom lens with optical stabilization",
+      "searchTerms": "sigma 24-70mm f/2.8 dg os hsm art lens canon ef zoom optical stabilization"
     },
     {
       "id": 4,
@@ -67,7 +73,9 @@
       "price": 199.0,
       "categoryId": 4,
       "image": "https://www.bhphotovideo.com/images/images250x250/manfrotto_mkmcadv5_bhus_befree_adv_carbon_fiber_1497674.jpg",
-      "quantity": 30
+      "quantity": 30,
+      "description": "Compact and lightweight travel tripod",
+      "searchTerms": "manfrotto befree advanced travel tripod compact lightweight"
     },
     {
       "id": 5,
@@ -75,7 +83,9 @@
       "price": 229.0,
       "categoryId": 5,
       "image": "https://www.bhphotovideo.com/images/images250x250/lowepro_lp37177_protactic_450_aw_ii_1524844.jpg",
-      "quantity": 15
+      "quantity": 15,
+      "description": "Durable and spacious camera backpack",
+      "searchTerms": "lowepro protactic 450 aw ii camera backpack durable spacious"
     }
   ],
   "users": [

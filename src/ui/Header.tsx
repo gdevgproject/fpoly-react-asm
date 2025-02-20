@@ -1,3 +1,4 @@
+import SearchDropdown from '@/features/search/components/SearchDropdown'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 
@@ -66,31 +67,7 @@ export default function Header() {
           </Link>
 
           {/* Search Bar */}
-          <div className='mx-auto max-w-2xl flex-1'>
-            <div className='group relative'>
-              <input
-                type='search'
-                placeholder='Search for products, brands and more'
-                className='w-full rounded-md border-2 border-transparent bg-white py-2 pr-10 pl-4 text-gray-900 transition-all duration-300 ease-in-out placeholder:text-gray-500 focus:border-[#517B3C] focus:ring-2 focus:ring-[#517B3C]/20 focus:outline-none'
-              />
-              <button className='absolute top-0 right-0 bottom-0 px-3 text-gray-500 transition-colors duration-200 hover:text-[#517B3C]'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  strokeWidth={1.5}
-                  stroke='currentColor'
-                  className='h-5 w-5'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z'
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+          <SearchDropdown />
 
           {/* Right Section */}
           <div className='flex items-center gap-6'>
