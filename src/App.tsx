@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
+import ProtectedRoute from './components/ProtectedRoute'
 import AdminCategories from './admin/AdminCategories'
 import AdminLayout from './admin/AdminLayout'
 import AdminProducts from './admin/AdminProducts'
@@ -34,7 +35,11 @@ export default function App() {
     },
     {
       path: '/admin',
-      element: <AdminLayout />,
+      element: (
+        <ProtectedRoute>
+          <AdminLayout />
+        </ProtectedRoute>
+      ),
       children: [
         {
           path: 'categories',
