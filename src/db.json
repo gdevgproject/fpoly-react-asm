@@ -5,42 +5,57 @@
       "name": "DSLR Cameras",
       "image": "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Explore our wide range of DSLR cameras, perfect for capturing high-quality photos and videos.",
-      "featuredProducts": [1, 2]
+      "featuredProducts": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
       "name": "Mirrorless Cameras",
       "image": "https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Discover the latest mirrorless cameras offering excellent performance in a compact design.",
-      "featuredProducts": [2, 3]
+      "featuredProducts": [
+        2,
+        3
+      ]
     },
     {
       "id": 3,
       "name": "Lenses",
       "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Find the perfect lens for your camera, from wide-angle to telephoto, to enhance your photography.",
-      "featuredProducts": [3, 4]
+      "featuredProducts": [
+        3,
+        4
+      ]
     },
     {
       "id": 4,
       "name": "Tripods",
       "image": "https://images.pexels.com/photos/266194/pexels-photo-266194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Stable and reliable tripods for steady shots and professional photography.",
-      "featuredProducts": [4, 5]
+      "featuredProducts": [
+        4,
+        5
+      ]
     },
     {
       "id": 5,
       "name": "Camera Bags",
       "image": "https://images.pexels.com/photos/208598/pexels-photo-208598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Protect your valuable equipment with our durable and stylish camera bags.",
-      "featuredProducts": [1, 5]
+      "featuredProducts": [
+        1,
+        5
+      ]
     }
   ],
   "products": [
     {
       "id": 1,
       "name": "Canon EOS 5D Mark IV",
-      "price": 2499.0,
+      "price": 2499,
       "categoryId": 1,
       "image": "https://www.bhphotovideo.com/images/images250x250/canon_1483c002_eos_5d_mark_iv_1272154.jpg",
       "quantity": 10,
@@ -50,7 +65,7 @@
     {
       "id": 2,
       "name": "Sony Alpha a7 III",
-      "price": 1999.0,
+      "price": 1999,
       "categoryId": 2,
       "image": "https://www.bhphotovideo.com/images/images250x250/sony_ilce_7m3_b_alpha_a7iii_mirrorless_digital_1392544.jpg",
       "quantity": 5,
@@ -60,7 +75,7 @@
     {
       "id": 3,
       "name": "Sigma 24-70mm f/2.8 DG OS HSM Art Lens for Canon EF",
-      "price": 1299.0,
+      "price": 1299,
       "categoryId": 3,
       "image": "https://www.bhphotovideo.com/images/images250x250/sigma_579101_24_70mm_f_2_8_dg_1461438.jpg",
       "quantity": 20,
@@ -70,7 +85,7 @@
     {
       "id": 4,
       "name": "Manfrotto Befree Advanced Travel Tripod",
-      "price": 199.0,
+      "price": 199,
       "categoryId": 4,
       "image": "https://www.bhphotovideo.com/images/images250x250/manfrotto_mkmcadv5_bhus_befree_adv_carbon_fiber_1497674.jpg",
       "quantity": 30,
@@ -80,7 +95,7 @@
     {
       "id": 5,
       "name": "Lowepro ProTactic 450 AW II Camera Backpack",
-      "price": 229.0,
+      "price": 229,
       "categoryId": 5,
       "image": "https://www.bhphotovideo.com/images/images250x250/lowepro_lp37177_protactic_450_aw_ii_1524844.jpg",
       "quantity": 15,
@@ -102,6 +117,13 @@
       "password": "123",
       "email": "user@example.com",
       "role": "user"
+    },
+    {
+      "username": "minh",
+      "email": "minh@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "id": 3
     }
   ]
 }

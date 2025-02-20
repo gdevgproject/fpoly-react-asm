@@ -1,10 +1,25 @@
 import SearchDropdown from '@/features/search/components/SearchDropdown'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<string | null>(null)
+  const [user, setUser] = useState<{ username: string } | null>(null)
   const headerRef = useRef<HTMLElement>(null)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const userStr = localStorage.getItem('user')
+    if (userStr) {
+      setUser(JSON.parse(userStr))
+    }
+  }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem('user')
+    setUser(null)
+    navigate('/')
+  }
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -96,27 +111,50 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Account */}
-            <Link
-              to='/auth/login'
-              className='flex items-center gap-2 rounded-md px-3 py-1.5 transition-all duration-200 hover:bg-[#5c8746] active:scale-95'
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth={1.5}
-                stroke='currentColor'
-                className='h-6 w-6'
+            {/* Account Section */}
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className='flex items-center gap-2 rounded-md px-3 py-1.5 transition-all duration-200 hover:bg-[#5c8746] active:scale-95'
               >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z'
-                />
-              </svg>
-              <span>Login</span>
-            </Link>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='h-6 w-6'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z'
+                  />
+                </svg>
+                <span>{user.username}</span>
+              </button>
+            ) : (
+              <Link
+                to='/auth/login'
+                className='flex items-center gap-2 rounded-md px-3 py-1.5 transition-all duration-200 hover:bg-[#5c8746] active:scale-95'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='h-6 w-6'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z'
+                  />
+                </svg>
+                <span>Login</span>
+              </Link>
+            )}
 
             {/* Cart */}
             <button className='flex items-center gap-2 rounded-md px-3 py-1.5 transition-all duration-200 hover:bg-[#5c8746] active:scale-95'>
