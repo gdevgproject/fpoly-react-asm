@@ -16,42 +16,63 @@ export default function LoginForm() {
   } = useForm<LoginFormInputs>()
 
   const onSubmit = async (data: LoginFormInputs) => {
-    try {
-      const loadingToast = toast.loading('Logging in...')
+    const loadingToast = toast.loading('Signing in...')
 
-      const response = await fetch('http://localhost:3000/login', {
+    try {
+      // 1. Login để lấy token
+      const loginResponse = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
 
-      const responseData = await response.json()
+      const loginData = await loginResponse.json()
 
-      if (response.ok) {
-        const { accessToken, user } = responseData
-        localStorage.setItem('token', accessToken)
-        localStorage.setItem('user', JSON.stringify(user))
+      if (!loginResponse.ok) {
+        throw new Error(loginData.message || 'Login failed')
+      }
 
-        toast.dismiss(loadingToast)
-        toast.success('Welcome back!')
+      // 2. Lấy thông tin user với token
+      const userResponse = await fetch('http://localhost:3000/600/users/me', {
+        headers: {
+          Authorization: `Bearer ${loginData.accessToken}`
+        }
+      })
 
-        navigate(user.role === 'admin' ? '/admin/categories' : '/')
+      if (!userResponse.ok) {
+        throw new Error('Failed to get user info')
+      }
+
+      const userData = await userResponse.json()
+
+      // 3. Lưu thông tin và điều hướng
+      localStorage.setItem('token', loginData.accessToken)
+      localStorage.setItem('user', JSON.stringify(userData))
+
+      toast.dismiss(loadingToast)
+      toast.success(`Welcome back, ${userData.username}!`)
+
+      if (userData.role === 'admin') {
+        navigate('/admin/categories')
       } else {
-        toast.dismiss(loadingToast)
-        // Specific error messages based on server response
-        if (response.status === 400) {
-          toast.error('Invalid email or password')
-        } else if (response.status === 401) {
-          toast.error('Email or password is incorrect')
+        navigate('/')
+      }
+    } catch (error) {
+      toast.dismiss(loadingToast)
+
+      if (error instanceof Error) {
+        if (error.message.includes('password is incorrect')) {
+          toast.error('Incorrect password')
+        } else if (error.message.includes('cannot find user')) {
+          toast.error('Email not found')
+        } else if (error.message.includes('invalid email')) {
+          toast.error('Invalid email format')
         } else {
-          toast.error(responseData.message || 'Login failed')
+          toast.error('Login failed. Please try again.')
         }
       }
-    } catch (err) {
-      toast.error('Network error. Please try again later.')
-      console.error('Login error:', err)
+
+      console.error('Login error:', error)
     }
   }
 

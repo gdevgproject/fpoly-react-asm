@@ -1,46 +1,66 @@
 import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router'
+import toast from 'react-hot-toast'
+import { Navigate, useNavigate } from 'react-router'
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const validateToken = async () => {
+    const validateAuth = async () => {
       const token = localStorage.getItem('token')
-      const user = localStorage.getItem('user')
 
-      if (!token || !user) {
+      if (!token) {
         setIsAuthenticated(false)
+        toast.error('Please login to access this page')
         return
       }
 
       try {
-        const response = await fetch('http://localhost:3000/users/me', {
+        // Verify token và role
+        const response = await fetch('http://localhost:3000/600/users/me', {
           headers: {
             Authorization: `Bearer ${token}`
           }
         })
 
-        if (response.ok) {
-          const userData = JSON.parse(user)
-          setIsAuthenticated(userData.role === 'admin')
-        } else {
-          setIsAuthenticated(false)
-          localStorage.removeItem('token')
-          localStorage.removeItem('user')
+        if (!response.ok) {
+          throw new Error('Invalid token')
         }
+
+        const userData = await response.json()
+
+        if (userData.role !== 'admin') {
+          throw new Error('Unauthorized')
+        }
+
+        setIsAuthenticated(true)
       } catch (error) {
         setIsAuthenticated(false)
         localStorage.removeItem('token')
         localStorage.removeItem('user')
+
+        if (error instanceof Error) {
+          if (error.message === 'Unauthorized') {
+            toast.error('Admin access required')
+          } else {
+            toast.error('Session expired. Please login again.')
+          }
+        }
+
+        navigate('/auth/login')
       }
     }
 
-    validateToken()
-  }, [])
+    validateAuth()
+  }, [navigate])
 
   if (isAuthenticated === null) {
-    return <div>Loading...</div>
+    return (
+      <div className='flex h-screen items-center justify-center'>
+        <div className='text-lg'>Verifying access...</div>
+      </div>
+    )
   }
 
   if (!isAuthenticated) {
