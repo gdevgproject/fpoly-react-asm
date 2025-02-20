@@ -5,50 +5,35 @@
       "name": "DSLR Cameras",
       "image": "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Explore our wide range of DSLR cameras, perfect for capturing high-quality photos and videos.",
-      "featuredProducts": [
-        1,
-        2
-      ]
+      "featuredProducts": [1, 2]
     },
     {
       "id": 2,
       "name": "Mirrorless Cameras",
       "image": "https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Discover the latest mirrorless cameras offering excellent performance in a compact design.",
-      "featuredProducts": [
-        2,
-        3
-      ]
+      "featuredProducts": [2, 3]
     },
     {
       "id": 3,
       "name": "Lenses",
       "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Find the perfect lens for your camera, from wide-angle to telephoto, to enhance your photography.",
-      "featuredProducts": [
-        3,
-        4
-      ]
+      "featuredProducts": [3, 4]
     },
     {
       "id": 4,
       "name": "Tripods",
       "image": "https://images.pexels.com/photos/266194/pexels-photo-266194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Stable and reliable tripods for steady shots and professional photography.",
-      "featuredProducts": [
-        4,
-        5
-      ]
+      "featuredProducts": [4, 5]
     },
     {
       "id": 5,
       "name": "Camera Bags",
       "image": "https://images.pexels.com/photos/208598/pexels-photo-208598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Protect your valuable equipment with our durable and stylish camera bags.",
-      "featuredProducts": [
-        1,
-        5
-      ]
+      "featuredProducts": [1, 5]
     }
   ],
   "products": [
@@ -105,25 +90,18 @@
   ],
   "users": [
     {
-      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "$2a$10$G3MIBxFT.itcHDEr/a4FRO4d0eUlRAcSXwkYyds2yISAOppF9Wu6m",
       "username": "admin",
-      "password": "123",
-      "email": "admin@example.com",
-      "role": "admin"
+      "role": "admin",
+      "id": 1
     },
     {
-      "id": 2,
+      "email": "user@gmail.com",
+      "password": "$2a$10$0KqdUqlZpOPPo.TS4gAvSeDQKpbtYm2tXqmUmxbZNlZFH8jnJAgx6",
       "username": "user",
-      "password": "123",
-      "email": "user@example.com",
-      "role": "user"
-    },
-    {
-      "username": "minh",
-      "email": "minh@gmail.com",
-      "password": "123456",
       "role": "user",
-      "id": 3
+      "id": 2
     }
   ]
 }

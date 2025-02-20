@@ -1,8 +1,9 @@
+import { Toaster } from 'react-hot-toast'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import ProtectedRoute from './components/ProtectedRoute'
 import AdminCategories from './admin/AdminCategories'
 import AdminLayout from './admin/AdminLayout'
 import AdminProducts from './admin/AdminProducts'
+import ProtectedRoute from './components/ProtectedRoute'
 import Auth from './features/auth/Auth'
 import ForgotPasswordForm from './features/auth/components/ForgotPasswordForm'
 import LoginForm from './features/auth/components/LoginForm'
@@ -70,5 +71,10 @@ export default function App() {
       ]
     }
   ])
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Toaster position='top-right' />
+    </>
+  )
 }

@@ -1,36 +1,57 @@
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router'
 
+interface LoginFormInputs {
+  email: string
+  password: string
+}
+
 export default function LoginForm() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
   const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting }
+  } = useForm<LoginFormInputs>()
 
-  interface User {
-    username: string
-    password: string
-    role: 'admin' | 'user'
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setError('')
-
+  const onSubmit = async (data: LoginFormInputs) => {
     try {
-      const response = await fetch('http://localhost:3000/users')
-      const users: User[] = await response.json()
+      const loadingToast = toast.loading('Logging in...')
 
-      const user = users.find((u) => u.username === username && u.password === password)
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
 
-      if (user) {
+      const responseData = await response.json()
+
+      if (response.ok) {
+        const { accessToken, user } = responseData
+        localStorage.setItem('token', accessToken)
         localStorage.setItem('user', JSON.stringify(user))
+
+        toast.dismiss(loadingToast)
+        toast.success('Welcome back!')
+
         navigate(user.role === 'admin' ? '/admin/categories' : '/')
       } else {
-        setError('Invalid username or password')
+        toast.dismiss(loadingToast)
+        // Specific error messages based on server response
+        if (response.status === 400) {
+          toast.error('Invalid email or password')
+        } else if (response.status === 401) {
+          toast.error('Email or password is incorrect')
+        } else {
+          toast.error(responseData.message || 'Login failed')
+        }
       }
     } catch (err) {
-      setError('Login failed')
+      toast.error('Network error. Please try again later.')
+      console.error('Login error:', err)
     }
   }
 
@@ -41,42 +62,48 @@ export default function LoginForm() {
         <p className='mt-2 text-sm text-gray-600'>Please sign in to your account</p>
       </div>
 
-      {error && <div className='mb-4 rounded-md bg-red-50 p-3 text-sm text-red-500'>{error}</div>}
-
-      <form onSubmit={handleSubmit} className='space-y-4'>
+      <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
         <div>
-          <label className='block text-sm font-medium text-gray-700' htmlFor='username'>
-            Username
-          </label>
+          <label className='block text-sm font-medium text-gray-700'>Email</label>
           <input
-            type='text'
-            id='username'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-green-500 focus:ring-green-500 focus:outline-none'
-            required
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Please enter a valid email address'
+              }
+            })}
+            className={`mt-1 block w-full rounded-md border px-3 py-2 ${
+              errors.email ? 'border-red-500' : 'border-gray-300'
+            }`}
           />
+          {errors.email && <p className='mt-1 text-sm text-red-500'>{errors.email.message}</p>}
         </div>
 
         <div>
-          <label className='block text-sm font-medium text-gray-700' htmlFor='password'>
-            Password
-          </label>
+          <label className='block text-sm font-medium text-gray-700'>Password</label>
           <input
             type='password'
-            id='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-green-500 focus:ring-green-500 focus:outline-none'
-            required
+            {...register('password', {
+              required: 'Password is required',
+              minLength: {
+                value: 6,
+                message: 'Password must be at least 6 characters'
+              }
+            })}
+            className={`mt-1 block w-full rounded-md border px-3 py-2 ${
+              errors.password ? 'border-red-500' : 'border-gray-300'
+            }`}
           />
+          {errors.password && <p className='mt-1 text-sm text-red-500'>{errors.password.message}</p>}
         </div>
 
         <button
           type='submit'
-          className='w-full rounded-md bg-[#517B3C] px-4 py-2 text-white transition-colors hover:bg-[#446832] focus:ring-2 focus:ring-[#517B3C] focus:ring-offset-2 focus:outline-none'
+          disabled={isSubmitting}
+          className='w-full rounded-md bg-[#517B3C] px-4 py-2 text-white transition-colors hover:bg-[#446832] disabled:opacity-50'
         >
-          Sign in
+          {isSubmitting ? 'Signing in...' : 'Sign in'}
         </button>
       </form>
 

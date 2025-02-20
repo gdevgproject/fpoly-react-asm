@@ -1,52 +1,47 @@
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router'
 
+interface RegisterFormInputs {
+  username: string
+  email: string
+  password: string
+  confirmPassword: string
+}
+
 export default function RegisterForm() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  })
-  const [error, setError] = useState('')
   const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm<RegisterFormInputs>()
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-
-    // Validate form
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match')
-      return
-    }
-
-    if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters')
-      return
-    }
-
+  const onSubmit = async (data: RegisterFormInputs) => {
     try {
-      const response = await fetch('http://localhost:3000/users', {
+      const response = await fetch('http://localhost:3000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
+          email: data.email,
+          password: data.password,
+          username: data.username,
           role: 'user'
         })
       })
 
       if (response.ok) {
+        toast.success('Registration successful!')
         navigate('/auth/login')
       } else {
-        setError('Registration failed')
+        const errorData = await response.json()
+        toast.error(errorData.message || 'Registration failed')
       }
     } catch (err) {
-      setError('Registration failed')
+      toast.error('Registration failed')
     }
   }
 
@@ -57,65 +52,67 @@ export default function RegisterForm() {
         <p className='mt-2 text-sm text-gray-600'>Join us today</p>
       </div>
 
-      {error && <div className='mb-4 rounded-md bg-red-50 p-3 text-sm text-red-500'>{error}</div>}
+      <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
+        <div>
+          <label className='block text-sm font-medium text-gray-700'>Username</label>
+          <input
+            {...register('username', { required: 'Username is required' })}
+            className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2'
+          />
+          {errors.username && <p className='mt-1 text-sm text-red-500'>{errors.username.message}</p>}
+        </div>
 
-      <form onSubmit={handleSubmit} className='space-y-4'>
-        <div className='mb-4'>
-          <label className='mb-2 block text-sm font-bold text-gray-700' htmlFor='username'>
-            Username
-          </label>
+        <div>
+          <label className='block text-sm font-medium text-gray-700'>Email</label>
           <input
-            className='focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none'
-            id='username'
-            type='text'
-            placeholder='Username'
-            value={formData.username}
-            onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Invalid email address'
+              }
+            })}
+            className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2'
           />
+          {errors.email && <p className='mt-1 text-sm text-red-500'>{errors.email.message}</p>}
         </div>
-        <div className='mb-4'>
-          <label className='mb-2 block text-sm font-bold text-gray-700' htmlFor='email'>
-            Email
-          </label>
+
+        <div>
+          <label className='block text-sm font-medium text-gray-700'>Password</label>
           <input
-            className='focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none'
-            id='email'
-            type='email'
-            placeholder='Email'
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
-        </div>
-        <div className='mb-6'>
-          <label className='mb-2 block text-sm font-bold text-gray-700' htmlFor='password'>
-            Password
-          </label>
-          <input
-            className='focus:shadow-outline mb-3 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none'
-            id='password'
             type='password'
-            placeholder='Password'
-            value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            {...register('password', {
+              required: 'Password is required',
+              minLength: {
+                value: 6,
+                message: 'Password must be at least 6 characters'
+              }
+            })}
+            className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2'
           />
+          {errors.password && <p className='mt-1 text-sm text-red-500'>{errors.password.message}</p>}
         </div>
-        <div className='mb-6'>
-          <label className='mb-2 block text-sm font-bold text-gray-700' htmlFor='confirmPassword'>
-            Confirm Password
-          </label>
+
+        <div>
+          <label className='block text-sm font-medium text-gray-700'>Confirm Password</label>
           <input
-            className='focus:shadow-outline mb-3 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none'
-            id='confirmPassword'
             type='password'
-            placeholder='Confirm Password'
-            value={formData.confirmPassword}
-            onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+            {...register('confirmPassword', {
+              validate: (val: string) => {
+                if (!val) {
+                  return 'Confirm Password is required'
+                }
+                if (watch('password') !== val) {
+                  return 'Passwords do not match'
+                }
+              }
+            })}
+            className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2'
           />
+          {errors.confirmPassword && <p className='mt-1 text-sm text-red-500'>{errors.confirmPassword.message}</p>}
         </div>
-        <button
-          type='submit'
-          className='w-full rounded-md bg-[#517B3C] px-4 py-2 text-white transition-colors hover:bg-[#446832] focus:ring-2 focus:ring-[#517B3C] focus:ring-offset-2 focus:outline-none'
-        >
+
+        <button type='submit' className='w-full rounded-md bg-[#517B3C] px-4 py-2 text-white'>
           Register
         </button>
       </form>
