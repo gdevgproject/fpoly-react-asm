@@ -1,7 +1,14 @@
 import { useState } from 'react'
 
-export default function ProductTabs() {
+interface ProductTabsProps {
+  fullDescription: string
+}
+
+export default function ProductTabs({ fullDescription }: ProductTabsProps) {
   const [activeTab, setActiveTab] = useState('description')
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  const toggleExpand = () => setIsExpanded(!isExpanded)
 
   return (
     <div className='mt-12'>
@@ -26,11 +33,10 @@ export default function ProductTabs() {
         {activeTab === 'description' && (
           <div className='prose max-w-none'>
             <h2 className='text-xl font-medium text-[#517B3C]'>Description</h2>
-            <p className='mt-4 text-gray-600'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled i
-            </p>
+            <div className={`mt-4 text-gray-600 ${!isExpanded ? 'line-clamp-3' : ''}`}>{fullDescription}</div>
+            <button onClick={toggleExpand} className='mt-2 text-sm font-medium text-[#517B3C] hover:text-[#446832]'>
+              {isExpanded ? 'See Less' : 'See More'}
+            </button>
           </div>
         )}
         {activeTab === 'about' && (

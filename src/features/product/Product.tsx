@@ -51,7 +51,7 @@ export default function ProductPage() {
           <ProductGallery product={product} />
           <ProductInfo product={product} />
         </div>
-        <ProductTabs />
+        <ProductTabs fullDescription={product.fullDescription} />
         <ProductReviews />
       </div>
     </main>
