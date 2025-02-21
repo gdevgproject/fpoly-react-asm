@@ -7,27 +7,18 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
   const navigate = useNavigate()
 
   useEffect(() => {
-    const validateAuth = async () => {
+    const validateAuth = () => {
       const token = localStorage.getItem('token')
+      const user = localStorage.getItem('user')
 
-      if (!token) {
+      if (!token || !user) {
         setIsAuthenticated(false)
         toast.error('Please login to access this page')
         return
       }
 
       try {
-        const response = await fetch('http://localhost:3000/users/me', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-
-        if (!response.ok) {
-          throw new Error('Invalid token')
-        }
-
-        const userData = await response.json()
+        const userData = JSON.parse(user)
 
         if (userData.role !== 'admin') {
           throw new Error('Unauthorized')

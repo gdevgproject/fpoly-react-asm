@@ -31,13 +31,18 @@ export default function LoginForm() {
         throw new Error(loginData.message || 'Login failed')
       }
 
-      // Get user info from token
+      if (!loginData.accessToken || !loginData.user) {
+        throw new Error('Invalid response from server')
+      }
+
+      // Store user info and token
       localStorage.setItem('token', loginData.accessToken)
       localStorage.setItem('user', JSON.stringify(loginData.user))
 
       toast.dismiss(loadingToast)
       toast.success(`Welcome back, ${loginData.user.username}!`)
 
+      // Redirect based on role
       if (loginData.user.role === 'admin') {
         navigate('/admin/categories')
       } else {
