@@ -1,40 +1,40 @@
 import { useState } from 'react'
 
-interface ProductGalleryProps {
-  product: {
-    id: number
-    name: string
-    image: string
-  }
+interface Product {
+  id: number
+  name: string
+  images: string[]
+  // ...other properties
 }
 
-export default function ProductGallery({ product }: ProductGalleryProps) {
+export default function ProductGallery({ product }: { product: Product }) {
   const [selectedImage, setSelectedImage] = useState(0)
-
-  const images = [product.image] // Use product image
 
   return (
     <div className='space-y-4'>
-      <div className='aspect-square overflow-hidden rounded-lg bg-gray-100'>
+      {/* Main large image */}
+      <div className='aspect-square overflow-hidden rounded-lg border bg-gray-100'>
         <img
-          src={images[selectedImage] || '/placeholder.svg'}
+          src={product.images[selectedImage]}
           alt={product.name}
-          className='h-full w-full object-cover'
+          className='h-full w-full object-cover object-center'
         />
       </div>
-      <div className='flex gap-4'>
-        {images.map((image, index) => (
+
+      {/* Thumbnail images */}
+      <div className='grid grid-cols-4 gap-4'>
+        {product.images.map((image, index) => (
           <button
             key={index}
             onClick={() => setSelectedImage(index)}
-            className={`relative aspect-square w-24 overflow-hidden rounded-lg border-2 ${
-              selectedImage === index ? 'border-[#517B3C]' : 'border-transparent'
+            className={`aspect-square overflow-hidden rounded-lg border bg-gray-100 ${
+              selectedImage === index ? 'ring-2 ring-green-500' : ''
             }`}
           >
             <img
-              src={image || '/placeholder.svg'}
-              alt={`Product thumbnail ${index + 1}`}
-              className='h-full w-full object-cover'
+              src={image}
+              alt={`${product.name} view ${index + 1}`}
+              className='h-full w-full object-cover object-center'
             />
           </button>
         ))}

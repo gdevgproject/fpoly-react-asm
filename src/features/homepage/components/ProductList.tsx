@@ -8,7 +8,7 @@ interface Product {
   price: number
   salePrice?: number
   sale?: boolean
-  image: string
+  images: string[] // Thay đổi từ image sang images
 }
 
 export default function ProductList() {
@@ -25,13 +25,17 @@ export default function ProductList() {
       <h2 className='mb-8 text-2xl font-semibold text-[#4A5842]'>Featured Products</h2>
       <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
         {products.map((product) => (
-          <Link key={product.id} to={`/product/${product.id}`} className='group relative'>
+          <Link
+            key={product.id}
+            to={`/product/${product.id}`} // Đảm bảo path khớp với route config
+            className='group relative'
+          >
             {product.sale && (
               <span className='absolute top-2 right-2 bg-[#1F2937] px-2 py-1 text-xs text-white'>SALE</span>
             )}
             <div className='aspect-square overflow-hidden rounded-lg bg-gray-100'>
               <img
-                src={product.image || '/placeholder.svg'}
+                src={product.images[0]} // Sử dụng ảnh đầu tiên từ mảng
                 alt={product.name}
                 className='h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105'
               />

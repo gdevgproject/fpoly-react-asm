@@ -5,50 +5,35 @@
       "name": "DSLR Cameras",
       "image": "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Explore our wide range of DSLR cameras, perfect for capturing high-quality photos and videos.",
-      "featuredProducts": [
-        1,
-        2
-      ]
+      "featuredProducts": [1, 2]
     },
     {
       "id": 2,
       "name": "Mirrorless Cameras",
       "image": "https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Discover the latest mirrorless cameras offering excellent performance in a compact design.",
-      "featuredProducts": [
-        2,
-        3
-      ]
+      "featuredProducts": [2, 3]
     },
     {
       "id": 3,
       "name": "Lenses",
       "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Find the perfect lens for your camera, from wide-angle to telephoto, to enhance your photography.",
-      "featuredProducts": [
-        3,
-        4
-      ]
+      "featuredProducts": [3, 4]
     },
     {
       "id": 4,
       "name": "Tripods",
       "image": "https://images.pexels.com/photos/266194/pexels-photo-266194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Stable and reliable tripods for steady shots and professional photography.",
-      "featuredProducts": [
-        4,
-        5
-      ]
+      "featuredProducts": [4, 5]
     },
     {
       "id": 5,
       "name": "Camera Bags",
       "image": "https://images.pexels.com/photos/208598/pexels-photo-208598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "description": "Protect your valuable equipment with our durable and stylish camera bags.",
-      "featuredProducts": [
-        1,
-        5
-      ]
+      "featuredProducts": [1, 5]
     }
   ],
   "products": [
@@ -57,9 +42,13 @@
       "name": "Canon EOS 5D Mark IV",
       "price": 2499,
       "categoryId": 1,
-      "image": "https://www.bhphotovideo.com/images/images250x250/canon_1483c002_eos_5d_mark_iv_1272154.jpg",
+      "images": [
+        "https://www.bhphotovideo.com/images/images250x250/canon_1483c002_eos_5d_mark_iv_1272154.jpg",
+        "https://images.pexels.com/photos/279906/pexels-photo-279906.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
       "quantity": 10,
-      "description": "Professional DSLR camera with 30.4MP full-frame sensor",
+      "shortDescription": "Professional DSLR camera with 30.4MP full-frame sensor",
+      "fullDescription": "The Canon EOS 5D Mark IV DSLR Camera is a remarkable advancement in image quality, performance and versatility. It features a 30.4MP full-frame CMOS sensor with ISO range 100-32000, expandable up to 50-102400. Dual Pixel CMOS AF technology enables fast and accurate autofocus during live view shooting and video recording. The camera also features 4K video recording at 30 fps, a 61-point AF system, 7 fps continuous shooting, built-in Wi-Fi with NFC, and much more.",
       "searchTerms": "canon eos 5d mark iv dslr camera professional photography full frame"
     },
     {
@@ -67,19 +56,30 @@
       "name": "Sony Alpha a7 III",
       "price": 1999,
       "categoryId": 2,
-      "image": "https://www.bhphotovideo.com/images/images250x250/sony_ilce_7m3_b_alpha_a7iii_mirrorless_digital_1392544.jpg",
+      "images": [
+        "https://www.bhphotovideo.com/images/images250x250/sony_ilce_7m3_b_alpha_a7iii_mirrorless_digital_1392544.jpg",
+        "https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://www.bhphotovideo.com/images/images1000x1000/sony_ilce_7m3_b_alpha_a7iii_mirrorless_digital_side_1392544.jpg",
+        "https://www.bhphotovideo.com/images/images1000x1000/sony_ilce_7m3_b_alpha_a7iii_mirrorless_digital_back_1392544.jpg"
+      ],
       "quantity": 5,
-      "description": "Mirrorless camera with 24.2MP full-frame sensor",
+      "shortDescription": "Mirrorless camera with 24.2MP full-frame sensor",
+      "fullDescription": "The Sony Alpha a7 III is a versatile mirrorless camera featuring a 24.2MP full-frame Exmor R BSI CMOS sensor and BIONZ X image processor. It offers a wide ISO range of 100-51200, expandable to 50-204800, and 10 fps continuous shooting. The camera also supports 4K video recording, 693-point phase-detection AF system, 5-axis SteadyShot INSIDE stabilization, and dual SD card slots.",
       "searchTerms": "sony alpha a7 iii mirrorless camera full frame"
     },
     {
       "id": 3,
-      "name": "Sigma 24-70mm f/2.8 DG OS HSM Art Lens for Canon EF",
+      "name": "Sigma 24-70mm f/2.8 DG OS HSM Art Lens",
       "price": 1299,
       "categoryId": 3,
-      "image": "https://www.bhphotovideo.com/images/images250x250/sigma_579101_24_70mm_f_2_8_dg_1461438.jpg",
+      "images": [
+        "https://www.bhphotovideo.com/images/images250x250/sigma_579101_24_70mm_f_2_8_dg_1461438.jpg",
+        "https://www.bhphotovideo.com/images/images1000x1000/sigma_579101_24_70mm_f_2_8_dg_side_1461438.jpg",
+        "https://www.bhphotovideo.com/images/images1000x1000/sigma_579101_24_70mm_f_2_8_dg_back_1461438.jpg"
+      ],
       "quantity": 20,
-      "description": "Versatile zoom lens with optical stabilization",
+      "shortDescription": "Versatile zoom lens with optical stabilization",
+      "fullDescription": "The Sigma 24-70mm f/2.8 DG OS HSM Art Lens for Canon EF is a versatile zoom lens designed for full-frame Canon EF-mount DSLRs. It features a constant f/2.8 maximum aperture, optical stabilization, and a Hyper Sonic Motor (HSM) for fast and quiet autofocus. The lens also includes three SLD elements and four aspherical elements to minimize aberrations and distortions.",
       "searchTerms": "sigma 24-70mm f/2.8 dg os hsm art lens canon ef zoom optical stabilization"
     },
     {
@@ -87,9 +87,12 @@
       "name": "Manfrotto Befree Advanced Travel Tripod",
       "price": 199,
       "categoryId": 4,
-      "image": "https://www.bhphotovideo.com/images/images250x250/manfrotto_mkmcadv5_bhus_befree_adv_carbon_fiber_1497674.jpg",
+      "images": [
+        "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
       "quantity": 30,
-      "description": "Compact and lightweight travel tripod",
+      "shortDescription": "Compact and lightweight travel tripod",
+      "fullDescription": "The Manfrotto Befree Advanced Travel Tripod is a compact and lightweight tripod designed for travel photographers. It features a carbon fiber construction, a maximum height of 59.1 inches, and a load capacity of 17.6 pounds. The tripod also includes a ball head with a quick release plate, a leg angle selector, and a twist lock mechanism for quick and easy setup.",
       "searchTerms": "manfrotto befree advanced travel tripod compact lightweight"
     },
     {
@@ -97,9 +100,10 @@
       "name": "Lowepro ProTactic 450 AW II Camera Backpack",
       "price": 229,
       "categoryId": 5,
-      "image": "https://www.bhphotovideo.com/images/images250x250/lowepro_lp37177_protactic_450_aw_ii_1524844.jpg",
+      "images": ["https://www.bhphotovideo.com/images/images250x250/lowepro_lp37177_protactic_450_aw_ii_1524844.jpg"],
       "quantity": 15,
-      "description": "Durable and spacious camera backpack",
+      "shortDescription": "Durable and spacious camera backpack",
+      "fullDescription": "The Lowepro ProTactic 450 AW II Camera Backpack is a durable and spacious backpack designed for professional photographers. It features a customizable interior with padded dividers, a built-in all-weather cover, and multiple access points for quick and easy gear retrieval. The backpack also includes a dedicated laptop compartment, a tripod attachment system, and a removable waist belt for added comfort.",
       "searchTerms": "lowepro protactic 450 aw ii camera backpack durable spacious"
     }
   ],

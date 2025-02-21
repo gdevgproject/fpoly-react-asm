@@ -2,16 +2,19 @@ import ProductGallery from '@/features/product/components/Product-gallery'
 import ProductInfo from '@/features/product/components/Product-info'
 import ProductReviews from '@/features/product/components/Product-reviews'
 import ProductTabs from '@/features/product/components/Product-tabs'
-import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 
 interface Product {
   id: number
   name: string
   price: number
   categoryId: number
-  image: string
+  images: string[]
   quantity: number
+  shortDescription: string
+  fullDescription: string
+  image: string
 }
 
 export default function ProductPage() {
