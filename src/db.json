@@ -88,5 +88,13 @@
       "searchTerms": "lowepro protactic 450 aw ii camera backpack durable spacious"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$dKU82pNkSf3uSb4aOYSqCOg.zmUtP0NnUhDIBlaJI6bkhzFIoSk0i",
+      "username": "admin",
+      "role": "admin",
+      "id": 1
+    }
+  ]
 }

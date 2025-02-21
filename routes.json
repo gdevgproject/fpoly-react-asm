@@ -1,6 +1,6 @@
 {
-  "/auth/*": "/$1",
-  "/api/*": "/$1",
-  "/600/*": "/$1",
+  "/600/users*": "/users$1",
+  "/login": "/login",
+  "/register": "/register",
   "/users/me": "/600/users/me"
 }

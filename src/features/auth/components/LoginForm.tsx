@@ -19,8 +19,7 @@ export default function LoginForm() {
     const loadingToast = toast.loading('Signing in...')
 
     try {
-      // 1. Login để lấy token
-      const loginResponse = await fetch('http://localhost:3000/auth/login', {
+      const loginResponse = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -32,27 +31,14 @@ export default function LoginForm() {
         throw new Error(loginData.message || 'Login failed')
       }
 
-      // 2. Lấy thông tin user với token
-      const userResponse = await fetch('http://localhost:3000/600/users/me', {
-        headers: {
-          Authorization: `Bearer ${loginData.accessToken}`
-        }
-      })
-
-      if (!userResponse.ok) {
-        throw new Error('Failed to get user info')
-      }
-
-      const userData = await userResponse.json()
-
-      // 3. Lưu thông tin và điều hướng
+      // Get user info from token
       localStorage.setItem('token', loginData.accessToken)
-      localStorage.setItem('user', JSON.stringify(userData))
+      localStorage.setItem('user', JSON.stringify(loginData.user))
 
       toast.dismiss(loadingToast)
-      toast.success(`Welcome back, ${userData.username}!`)
+      toast.success(`Welcome back, ${loginData.user.username}!`)
 
-      if (userData.role === 'admin') {
+      if (loginData.user.role === 'admin') {
         navigate('/admin/categories')
       } else {
         navigate('/')

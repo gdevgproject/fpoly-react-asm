@@ -17,8 +17,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
       }
 
       try {
-        // Verify token và role
-        const response = await fetch('http://localhost:3000/600/users/me', {
+        const response = await fetch('http://localhost:3000/users/me', {
           headers: {
             Authorization: `Bearer ${token}`
           }

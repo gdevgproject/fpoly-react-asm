@@ -22,7 +22,6 @@ export default function RegisterForm() {
     const loadingToast = toast.loading('Creating account...')
 
     try {
-      // 1. Register user using json-server-auth endpoint
       const registerResponse = await fetch('http://localhost:3000/register', {
         method: 'POST',
         headers: {
@@ -38,16 +37,7 @@ export default function RegisterForm() {
 
       if (!registerResponse.ok) {
         const errorData = await registerResponse.json()
-
-        // Handle specific error cases
-        if (registerResponse.status === 400) {
-          if (errorData.message?.includes('email')) {
-            throw new Error('Email already exists')
-          }
-          throw new Error(errorData.message)
-        }
-
-        throw new Error('Registration failed')
+        throw new Error(errorData.message || 'Registration failed')
       }
 
       toast.dismiss(loadingToast)
@@ -55,20 +45,9 @@ export default function RegisterForm() {
       navigate('/auth/login')
     } catch (error) {
       toast.dismiss(loadingToast)
-
       if (error instanceof Error) {
-        switch (error.message) {
-          case 'Email already exists':
-            toast.error('This email is already registered')
-            break
-          case 'Password is too short':
-            toast.error('Password must be at least 6 characters')
-            break
-          default:
-            toast.error('Registration failed. Please try again.')
-        }
+        toast.error(error.message)
       }
-
       console.error('Registration error:', error)
     }
   }
